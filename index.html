@@ -1,0 +1,946 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ECOTHINK Ghana</title>
+<meta name="description" content="ECOTHINK – Ecosystem Thinking Research and Development Group. Ghana-based not-for-profit think tank and action research collective working across the Volta River Basin.">
+<link rel="canonical" href="https://ecothinkgh.net/">
+<meta property="og:title" content="ECOTHINK – Ecosystem Thinking Research and Development Group">
+<meta property="og:description" content="Ghana-based not-for-profit think tank and action research collective working across the Volta River Basin.">
+<meta property="og:url" content="https://ecothinkgh.net/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: river-line spine — sections stacked along a winding "Black Volta" rule; dark savannah-night bands for hero, impact and funding */
+:root{
+  --ground:#EEF1EA;      /* dry-season grass, pale */
+  --paper:#FAFBF7;
+  --ink:#16261F;         /* shea-leaf ink */
+  --ink-soft:#4A5A51;
+  --line:#CFD7CB;
+  --forest:#1E4D3A;      /* primary */
+  --volta:#1C6480;       /* river blue */
+  --laterite:#B4652A;    /* accent: laterite soil */
+  --laterite-soft:#F1DFCB;
+  --band:#13281F;        /* night band */
+  --band-ink:#E9EFE7;
+  --band-soft:#A9BBAF;
+  --ok:#2F7A4E;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Public Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --r:6px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --ground:#0F1A15;--paper:#15231C;--ink:#E4EBE3;--ink-soft:#A3B3A8;--line:#2A3D33;
+  --forest:#7CC29D;--volta:#6DB5D3;--laterite:#E39A5C;--laterite-soft:#3A2818;
+  --band:#0A130F;--band-ink:#E9EFE7;--band-soft:#93A79A;--ok:#7CC29D;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --ground:#0F1A15;--paper:#15231C;--ink:#E4EBE3;--ink-soft:#A3B3A8;--line:#2A3D33;
+  --forest:#7CC29D;--volta:#6DB5D3;--laterite:#E39A5C;--laterite-soft:#3A2818;
+  --band:#0A130F;--band-ink:#E9EFE7;--band-soft:#93A79A;--ok:#7CC29D;color-scheme:dark}
+
+*{box-sizing:border-box}
+img{max-width:100%}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--band)}
+a{color:var(--volta)}
+h1,h2,h3,h4{font-family:var(--f-display);line-height:1.1;text-wrap:balance;margin:0;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--laterite);font-weight:500}
+.lede{font-size:1.125rem;color:var(--ink-soft);max-width:62ch}
+section{padding-block:clamp(56px,8vw,96px)}
+.sec-head{display:grid;gap:12px;margin-bottom:40px;max-width:760px}
+.sec-head h2{font-size:clamp(2rem,4.4vw,3rem);font-weight:800}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;text-decoration:none;border:1.5px solid transparent;cursor:pointer;font-family:var(--f-body);font-size:.95rem}
+.btn-primary{background:var(--laterite);color:#fff}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-ghost{border-color:currentColor;color:inherit;background:transparent}
+:focus-visible{outline:3px solid var(--laterite);outline-offset:2px}
+
+/* Header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--band);color:var(--band-ink)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none}
+.brand-mark{width:36px;height:36px;flex:none}
+.brand b{font-family:var(--f-display);font-weight:800;font-size:1.25rem;letter-spacing:.02em}
+.brand small{display:block;font-size:.66rem;color:var(--band-soft);letter-spacing:.06em;text-transform:uppercase;line-height:1.2}
+.nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--band-ink);text-decoration:none;padding:8px 10px;border-radius:var(--r);font-size:.9rem;font-weight:500}
+.nav ul a:hover{background:rgba(255,255,255,.08)}
+.nav .fund-link{background:var(--laterite);color:#fff}
+.menu-btn{display:none;background:none;border:1px solid var(--band-soft);color:var(--band-ink);border-radius:var(--r);padding:8px 12px;font:inherit;cursor:pointer}
+@media (max-width:980px){
+  .menu-btn{display:block}
+  .nav ul{position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--band);padding:8px max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px));border-top:1px solid rgba(255,255,255,.1)}
+  .nav ul:not(.open){display:none}
+  .nav ul a{display:block;padding:12px}
+}
+
+/* Hero */
+.hero{background:var(--band);color:var(--band-ink);padding-block:clamp(48px,7vw,88px) 0;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end}
+.hero h1{font-size:clamp(2.6rem,7vw,5.4rem);font-weight:800;line-height:.98}
+.hero h1 em{font-style:normal;color:var(--laterite)}
+.hero .lede{color:var(--band-soft);margin-top:20px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:28px;font-family:var(--f-mono);font-size:.78rem;color:var(--band-soft)}
+.hero-art{min-width:0}
+.hero-art svg{width:100%;height:auto;display:block}
+.river-band{display:block;width:100%;height:70px;margin-top:24px}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr}.hero-art{max-width:420px}}
+
+/* Pillars */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pillar{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;gap:12px;align-content:start}
+.pillar .ico{width:44px;height:44px}
+.pillar h3{font-size:1.35rem}
+.pillar p{color:var(--ink-soft)}
+.pillar ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:.95rem}
+@media (max-width:860px){.pillars{grid-template-columns:1fr}}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.about-grid > *{min-width:0}
+.mission{border-left:4px solid var(--laterite);padding:8px 0 8px 20px;margin:24px 0}
+.mission p{font-family:var(--f-display);font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:700;line-height:1.2}
+.mission span{font-family:var(--f-mono);font-size:.75rem;color:var(--ink-soft);letter-spacing:.08em;text-transform:uppercase}
+.body-copy{display:grid;gap:16px;color:var(--ink-soft);max-width:62ch}
+.regions{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.regions h3{font-size:1.2rem;margin-bottom:6px}
+.regions svg{width:100%;height:auto;display:block;margin:12px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:.82rem;padding:5px 12px;border-radius:999px;background:var(--ground);border:1px solid var(--line);color:var(--ink)}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr}}
+
+/* Track record */
+.track{background:var(--band);color:var(--band-ink)}
+.track .sec-head h2{color:var(--band-ink)}
+.track .lede{color:var(--band-soft)}
+.timeline{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);overflow:hidden}
+.t-item{background:var(--band);padding:28px;display:grid;gap:10px;align-content:start}
+.t-tag{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--band-soft)}
+.t-tag b{color:var(--laterite);font-weight:500}
+.t-item h3{font-size:1.4rem;color:var(--band-ink)}
+.t-item p{color:var(--band-soft)}
+.t-item .theme-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.t-item .theme-row span{font-size:.76rem;border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:3px 10px;color:var(--band-ink)}
+.partners-row{display:flex;flex-wrap:wrap;gap:12px 32px;align-items:center;margin-top:36px;color:var(--band-soft);font-size:.85rem}
+.partners-row strong{font-family:var(--f-display);font-size:1.5rem;color:var(--band-ink);letter-spacing:.04em}
+@media (max-width:760px){.timeline{grid-template-columns:1fr}}
+
+/* Team */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.person{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:10px;align-content:start}
+.avatar{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:1.3rem;color:#fff;background:var(--forest)}
+.person h3{font-size:1.2rem}
+.person .role{color:var(--laterite);font-weight:600;font-size:.9rem}
+.person .contact-line{font-family:var(--f-mono);font-size:.8rem;color:var(--ink-soft);word-break:break-word}
+.person.open{border-style:dashed;background:transparent}
+.person.open .avatar{background:transparent;border:2px dashed var(--line);color:var(--ink-soft)}
+.team.founders{grid-template-columns:repeat(5,1fr)}
+@media (max-width:1100px){.team.founders{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:860px){.team,.team.founders{grid-template-columns:1fr}}
+.compliance{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:56px;max-width:760px}
+.doc{border:1px solid var(--line);border-radius:var(--r);padding:20px;background:var(--paper);display:grid;gap:8px;align-content:start}
+.doc .k{font-family:var(--f-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft)}
+.doc h4{font-size:1.05rem}
+.doc .num{font-family:var(--f-mono);font-size:.88rem;color:var(--ink);word-break:break-all}
+.doc .valid{font-size:.82rem;color:var(--ok);font-weight:600}
+.doc p{font-size:.88rem;color:var(--ink-soft)}
+@media (max-width:520px){.compliance{grid-template-columns:1fr}}
+
+/* Partner & Fund */
+.fund{background:var(--paper);border-block:1px solid var(--line)}
+.fund-top{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start;margin-bottom:56px}
+.fund-top > *{min-width:0}
+.why{display:grid;gap:14px;margin-top:20px}
+.why div{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}
+.why svg{width:24px;height:24px;margin-top:2px}
+.why p{color:var(--ink-soft)}
+.why b{color:var(--ink)}
+.factsheet{background:var(--ground);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.factsheet h3{font-size:1.2rem;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.factsheet dl{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;margin:16px 0 0;font-size:.9rem}
+.factsheet dt{font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);padding-top:3px}
+.factsheet dd{margin:0;min-width:0}
+.todo{color:var(--laterite);font-style:italic}
+.copy-btn{font-family:var(--f-mono);font-size:.72rem;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:5px 12px;cursor:pointer}
+.sub-h{font-size:1.6rem;margin-bottom:8px}
+.sub-p{color:var(--ink-soft);margin-bottom:24px;max-width:62ch}
+.pipeline{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:56px}
+.proj{border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:10px;align-content:start;background:var(--paper)}
+.proj .status{justify-self:start;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.st-ready{background:var(--laterite-soft);color:var(--laterite)}
+.st-concept{background:var(--ground);color:var(--volta);border:1px solid var(--line)}
+.proj h4{font-size:1.2rem}
+.proj p{color:var(--ink-soft);font-size:.95rem}
+.proj .meta{font-size:.82rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:10px;display:grid;gap:4px}
+.proj .meta b{color:var(--ink);font-weight:600}
+.proj.slot{border-style:dashed;background:transparent;place-content:center;text-align:center;min-height:240px}
+.proj.slot h4{color:var(--ink-soft)}
+@media (max-width:960px){.pipeline{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.pipeline{grid-template-columns:1fr}}
+.models{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:56px}
+.model{padding:20px;border-top:3px solid var(--forest);background:var(--ground);border-radius:0 0 var(--r) var(--r);display:grid;gap:8px;align-content:start}
+.model:nth-child(2){border-color:var(--volta)}
+.model:nth-child(3){border-color:var(--laterite)}
+.model:nth-child(4){border-color:var(--ink-soft)}
+.model h4{font-size:1.1rem}
+.model p{font-size:.9rem;color:var(--ink-soft)}
+@media (max-width:900px){.models{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.models{grid-template-columns:1fr}}
+.sdgs{display:flex;flex-wrap:wrap;gap:10px}
+.sdg{display:flex;gap:10px;align-items:center;padding:8px 14px 8px 8px;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);font-size:.88rem}
+.sdg b{display:grid;place-items:center;width:34px;height:34px;border-radius:4px;color:#fff;font-family:var(--f-display);font-size:1rem}
+
+/* Events / News */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.split > *{min-width:0}
+@media (max-width:900px){.split{grid-template-columns:1fr}}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.filters button{font:inherit;font-size:.85rem;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:var(--paper)}
+.event{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.event:first-of-type{border-top:1px solid var(--line)}
+.date-box{text-align:center;border:1px solid var(--line);border-radius:var(--r);padding:8px 4px;background:var(--paper);align-self:start}
+.date-box b{display:block;font-family:var(--f-display);font-size:1.3rem;line-height:1}
+.date-box span{font-family:var(--f-mono);font-size:.68rem;text-transform:uppercase;color:var(--ink-soft)}
+.event h4{font-size:1.1rem;margin-bottom:4px}
+.event p{font-size:.92rem;color:var(--ink-soft)}
+.event .loc{font-family:var(--f-mono);font-size:.74rem;color:var(--volta);margin-top:6px}
+.news-list{display:grid;gap:16px}
+.news{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:8px}
+.news .cat{font-family:var(--f-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--laterite)}
+.news h4{font-size:1.15rem}
+.news p{font-size:.93rem;color:var(--ink-soft)}
+.news details summary{cursor:pointer;color:var(--volta);font-weight:600;font-size:.9rem}
+.news details p{margin-top:8px}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:12px}
+.g{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);cursor:pointer;padding:0;background:var(--paper);text-align:left;font:inherit;color:inherit}
+.g.wide{grid-column:span 2}
+.g.tall{grid-row:span 2}
+.g svg{position:absolute;inset:0;width:100%;height:100%}
+.g figcaption,.g .cap{position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(transparent,rgba(10,19,15,.85));color:#fff;font-size:.8rem}
+.g .cap small{display:block;font-family:var(--f-mono);font-size:.66rem;opacity:.8;text-transform:uppercase;letter-spacing:.06em}
+@media (max-width:760px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:140px}.g.wide{grid-column:span 2}}
+.note{font-size:.85rem;color:var(--ink-soft);margin-top:16px;font-style:italic}
+.lightbox{position:fixed;inset:0;z-index:50;background:rgba(5,10,8,.88);display:grid;place-items:center;padding:24px}
+.lightbox-inner{max-width:760px;width:100%;background:var(--paper);border-radius:var(--r);overflow:hidden}
+.lightbox-inner .art{aspect-ratio:16/9;position:relative;max-width:100%}
+.lightbox-inner .art svg{position:absolute;inset:0;width:100%;height:100%}
+.lightbox-inner .txt{padding:18px 20px;display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+.lightbox button{font:inherit}
+
+/* Resources */
+.res-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--paper)}
+table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:620px}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);font-weight:500}
+tr:last-child td{border-bottom:none}
+td .type{font-family:var(--f-mono);font-size:.72rem;padding:3px 8px;border-radius:4px;background:var(--ground);border:1px solid var(--line);white-space:nowrap}
+td .avail{font-size:.82rem;color:var(--ink-soft)}
+.search{width:100%;max-width:360px;padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);font:inherit;margin-bottom:16px}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px}
+.contact-grid > *{min-width:0}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+.c-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:18px}
+.c-row{display:grid;gap:4px}
+.c-row .k{font-family:var(--f-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft)}
+.c-row .v{font-size:1rem;word-break:break-word}
+.c-row .v.mono{font-family:var(--f-mono);font-size:1.05rem}
+.c-row .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.socials{display:flex;flex-wrap:wrap;gap:10px}
+.soc{display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px dashed var(--line);border-radius:var(--r);font-size:.82rem;color:var(--ink-soft)}
+.soc svg{width:18px;height:18px;flex:none}
+form{display:grid;gap:14px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:560px){.f-row{grid-template-columns:1fr}}
+label{display:grid;gap:6px;font-size:.85rem;font-weight:600}
+input,select,textarea{font:inherit;font-weight:400;padding:11px 12px;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--ink);width:100%}
+textarea{min-height:130px;resize:vertical}
+.form-out{background:var(--laterite-soft);border-radius:var(--r);padding:16px;display:grid;gap:10px;font-size:.92rem}
+.form-out pre{white-space:pre-wrap;font-family:var(--f-mono);font-size:.8rem;margin:0;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:10px;max-height:220px;overflow:auto}
+
+/* Footer */
+footer{background:var(--band);color:var(--band-soft);padding-block:48px 32px;font-size:.9rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+@media (max-width:760px){.foot-grid{grid-template-columns:1fr}}
+footer h4{color:var(--band-ink);font-size:1rem;margin-bottom:10px}
+footer a{color:var(--band-ink);text-decoration:none}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.foot-base{border-top:1px solid rgba(255,255,255,.12);margin-top:32px;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--f-mono);font-size:.74rem}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--ground);padding:10px 18px;border-radius:999px;font-size:.88rem;z-index:60}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="ECOTHINK home">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#1E4D3A"/>
+        <path d="M20 31V15" stroke="#E9EFE7" stroke-width="2" stroke-linecap="round"/>
+        <path d="M20 19c-5 0-8-3-8-8 5 0 8 3 8 8zM20 16c4 0 7-3 7-7-4 0-7 3-7 7z" fill="#7CC29D"/>
+        <path d="M6 28c5-3 9 3 14 0s9 3 14 0" stroke="#6DB5D3" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span><b>ECOTHINK</b><small>Ecosystem Thinking R&amp;D Group</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navList">Menu</button>
+    <ul id="navList">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Our Work</a></li>
+      <li><a href="#events">Events &amp; News</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="fund-link" href="#partner">Partner &amp; Fund</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Think tank · Action research collective · Wa, Ghana</p>
+      <h1 style="margin-top:16px">Humans living in harmony with their <em>ecosystems</em>.</h1>
+      <p class="lede">ECOTHINK is a Ghana-based, internationally recognised not-for-profit. We bridge the gap between academic research and practical, on-the-ground action across the Volta River Basin and Sub-Saharan Africa.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#partner">Partner with us</a>
+        <a class="btn btn-ghost" href="#work">See our track record</a>
+      </div>
+      <div class="hero-meta">
+        <span>Licensed NPO · Reg. CG021970324</span>
+        <span>Team experience with IUCN · GIZ · UNICEF</span>
+        <span>6 focus regions</span>
+        <span>GhanaPost GPS XW-1036-1104</span>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 400 330">
+        <circle cx="290" cy="90" r="54" fill="#B4652A" opacity=".9"/>
+        <path d="M0 250 Q100 215 200 238 T400 226 V330 H0Z" fill="#1E4D3A"/>
+        <path d="M0 278 Q120 252 220 272 T400 262 V330 H0Z" fill="#183E2F"/>
+        <!-- baobab -->
+        <g fill="#0E1E17">
+          <path d="M120 250 C118 210 112 190 104 170 L136 170 C130 192 126 212 128 250Z"/>
+          <path d="M108 172 C95 150 80 148 64 150 M132 172 C145 148 162 144 178 148 M118 170 C116 146 120 132 126 120" stroke="#0E1E17" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <ellipse cx="64" cy="146" rx="22" ry="11"/><ellipse cx="180" cy="144" rx="26" ry="12"/><ellipse cx="126" cy="116" rx="24" ry="12"/>
+        </g>
+        <!-- shea saplings -->
+        <g fill="#7CC29D">
+          <circle cx="260" cy="228" r="12"/><rect x="258" y="232" width="4" height="16" fill="#0E1E17"/>
+          <circle cx="300" cy="222" r="15"/><rect x="298" y="228" width="4" height="18" fill="#0E1E17"/>
+          <circle cx="342" cy="226" r="11"/><rect x="340" y="230" width="4" height="14" fill="#0E1E17"/>
+        </g>
+        <path d="M0 304 C80 290 130 318 210 300 S330 290 400 306" stroke="#6DB5D3" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <text x="16" y="324" font-family="IBM Plex Mono, monospace" font-size="10" fill="#A9BBAF" letter-spacing="1.5">BLACK VOLTA</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section id="pillars">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">What we do</p>
+      <h2>Three pillars, one ecosystem approach</h2>
+      <p class="lede">Every project combines rigorous evidence, local skills and visible change on the land.</p>
+    </div>
+    <div class="pillars">
+      <article class="pillar">
+        <svg class="ico" viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" rx="8" fill="#1E4D3A"/><circle cx="19" cy="19" r="8" stroke="#fff" stroke-width="2.4" fill="none"/><path d="M25 25l8 8" stroke="#E39A5C" stroke-width="2.6" stroke-linecap="round"/></svg>
+        <h3>Consultancy &amp; Action Research</h3>
+        <p>Evidence-based solutions in ecosystem management for governments, development partners and communities.</p>
+        <ul><li>Participatory district planning</li><li>Participatory GIS (PGIS) mapping</li><li>Baseline, monitoring and evaluation studies</li></ul>
+      </article>
+      <article class="pillar">
+        <svg class="ico" viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" rx="8" fill="#1C6480"/><circle cx="15" cy="17" r="4" fill="#fff"/><circle cx="29" cy="17" r="4" fill="#fff"/><path d="M8 32c1-6 13-6 14 0M22 32c1-6 13-6 14 0" stroke="#fff" stroke-width="2.2" fill="none"/></svg>
+        <h3>Capacity Building &amp; Training</h3>
+        <p>Practical skills for local stakeholders so that results last beyond the project cycle.</p>
+        <ul><li>District and community stakeholder training</li><li>Artisan and farmer skills transfer</li><li>Field research training</li></ul>
+      </article>
+      <article class="pillar">
+        <svg class="ico" viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" rx="8" fill="#B4652A"/><path d="M22 34V18" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><path d="M22 22c-6 0-9-3-9-9 6 0 9 3 9 9zM22 19c5 0 8-3 8-8-5 0-8 3-8 8z" fill="#fff"/></svg>
+        <h3>Direct Ecosystem Services</h3>
+        <p>Implementation on the ground: conservation, agroforestry, Volta Basin ecosystem health and sustainable livelihoods.</p>
+        <ul><li>Tree, fruit-tree and cereal planting</li><li>Value-chain development for smallholders</li><li>WASH and sanitation solutions</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="padding-top:0">
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow">About ECOTHINK</p>
+      <h2 style="font-size:clamp(2rem,4.4vw,3rem);font-weight:800;margin-top:12px">Research that ends up on the land</h2>
+      <div class="mission"><span>Our mission</span><p>Humans live in harmony with their ecosystems.</p></div>
+      <div class="body-copy">
+        <p>The Ecosystem Thinking Research and Development Group (ECOTHINK) is a not-for-profit think tank and action research collective based in Wa, Upper West Region, Ghana. It was incorporated in 2024 as a company limited by guarantee and is licensed as a National Non-Profit Organisation.</p>
+        <p>ECOTHINK brings together senior academics and practitioners from UBIDS, Dr. Hilla Limann Technical University and the University for Development Studies, whose combined experience spans ecosystem management, engineering, gender and social inclusion, geography and development planning.</p>
+        <p>We drive sustainable development and environmental stewardship across Sub-Saharan Africa. Our strength is closing the gap between what academic research knows and what communities, districts and partners can put into practice.</p>
+        <p>Our work contributes to ecosystem-based management, climate change resilience and better human well-being in Ghana and beyond. We treat environmental health and social well-being, including child protection and sanitation, as parts of one system.</p>
+      </div>
+    </div>
+    <aside class="regions">
+      <p class="eyebrow">Where we work</p>
+      <h3>The Volta River Basin</h3>
+      <p style="color:var(--ink-soft);font-size:.92rem">Anchored in northern and central Ghana.</p>
+      <svg viewBox="0 0 320 300" role="img" aria-label="Schematic of ECOTHINK's six focus regions in the Volta Basin">
+        <rect x="0" y="0" width="320" height="300" fill="none"/>
+        <g font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing=".5">
+          <rect x="18" y="14" width="96" height="64" rx="6" fill="#1E4D3A" opacity=".9"/>
+          <text x="26" y="34" fill="#fff">UPPER WEST</text><text x="26" y="48" fill="#E9EFE7" font-size="8.5">HQ · Wa</text>
+          <circle cx="44" cy="62" r="5" fill="#E39A5C"/>
+          <rect x="120" y="14" width="88" height="40" rx="6" fill="#1E4D3A" opacity=".75"/>
+          <text x="128" y="38" fill="#fff">UPPER EAST</text>
+          <rect x="214" y="14" width="88" height="56" rx="6" fill="#1E4D3A" opacity=".6"/>
+          <text x="222" y="38" fill="#fff">NORTH EAST</text>
+          <rect x="120" y="60" width="182" height="62" rx="6" fill="none" stroke="var(--line)" stroke-dasharray="4 4"/>
+          <text x="132" y="96" fill="var(--ink-soft)">SAVANNAH · NORTHERN</text>
+          <rect x="18" y="130" width="130" height="58" rx="6" fill="#1C6480" opacity=".85"/>
+          <text x="26" y="162" fill="#fff">BONO</text>
+          <rect x="154" y="130" width="96" height="58" rx="6" fill="#1C6480" opacity=".7"/>
+          <text x="162" y="162" fill="#fff">BONO EAST</text>
+          <rect x="256" y="128" width="46" height="110" rx="6" fill="#B4652A" opacity=".85"/>
+          <text x="262" y="186" fill="#fff">OTI</text>
+          <path d="M58 78 C70 110 52 130 90 150 S150 200 200 210 S250 240 270 290" stroke="#6DB5D3" stroke-width="4" fill="none" stroke-linecap="round" opacity=".9"/>
+          <text x="40" y="232" fill="var(--volta)">BLACK VOLTA → LAKE VOLTA</text>
+          <text x="18" y="290" fill="var(--ink-soft)" font-size="8">Schematic, not to scale. Savannah: GIZ mapping area.</text>
+        </g>
+      </svg>
+      <div class="chips"><span class="chip">Upper West</span><span class="chip">Upper East</span><span class="chip">North East</span><span class="chip">Bono</span><span class="chip">Bono East</span><span class="chip">Oti</span></div>
+    </aside>
+  </div>
+</section>
+
+<!-- TRACK RECORD -->
+<section class="track" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Track record</p>
+      <h2>Experience our team brings</h2>
+      <p class="lede">Before and since ECOTHINK was formed, its members have delivered high-impact work for national and international partners, from district governance to household sanitation.</p>
+    </div>
+    <div class="timeline">
+      <article class="t-item">
+        <div class="t-tag"><b>IUCN</b><span>2015</span><span>Nandom District</span></div>
+        <h3>Pioneering regional planning on the Black Volta</h3>
+        <p>We won and executed an IUCN project to develop a participatory five-year development plan for Nandom District, along the ecologically sensitive Black Volta River. Ecosystem management was integrated directly into local governance.</p>
+        <div class="theme-row"><span>Participatory planning</span><span>Local governance</span><span>River basin</span></div>
+      </article>
+      <article class="t-item">
+        <div class="t-tag"><b>GIZ</b><span>Recent</span><span>Upper West &amp; Savannah</span></div>
+        <h3>Multi-sectoral development mapping with PGIS</h3>
+        <p>Using Participatory GIS, we mapped development infrastructure across multiple District Assemblies in the Upper West and Savannah Regions, giving districts accurate data for strategic planning.</p>
+        <div class="theme-row"><span>PGIS</span><span>Spatial data</span><span>District planning</span></div>
+      </article>
+      <article class="t-item">
+        <div class="t-tag"><b>UNICEF</b><span>Multiple projects</span><span>Northern Ghana</span></div>
+        <h3>Child protection and WASH</h3>
+        <p>We have undertaken a range of projects for UNICEF focused on child protection and Water, Sanitation and Hygiene, reflecting our view that human well-being and environmental health go together.</p>
+        <div class="theme-row"><span>Child protection</span><span>WASH</span><span>Social well-being</span></div>
+      </article>
+      <article class="t-item">
+        <div class="t-tag"><b>Community</b><span>Ongoing</span><span>Rural communities</span></div>
+        <h3>Grassroots planting and value chains</h3>
+        <p>We plant trees, including fruit trees, and cereals with communities and develop their value chains. This directly empowers smallholder farmers, rural households and vulnerable groups, building resilience.</p>
+        <div class="theme-row"><span>Agroforestry</span><span>Livelihoods</span><span>Climate resilience</span></div>
+      </article>
+    </div>
+    <div class="partners-row"><span>Our members have worked with</span><strong>IUCN</strong><strong>GIZ</strong><strong>UNICEF</strong><strong>District Assemblies</strong></div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Our people</p>
+      <h2>Leadership and founding members</h2>
+      <p class="lede">An Executive Council of senior academics, supported by founding members from three universities in northern Ghana.</p>
+    </div>
+    <h3 class="sub-h" style="font-size:1.2rem">Executive Council</h3>
+    <div class="team" style="margin-bottom:40px">
+      <article class="person">
+        <div class="avatar">KP</div>
+        <h3>Prof. Kenneth Peprah</h3>
+        <p class="role">Director</p>
+        <p style="color:var(--ink-soft);font-size:.93rem">Professor of Environment and Resource Studies, University of Business and Integrated Development Studies (UBIDS), Wa.</p>
+        <p class="contact-line">kpeprah@ubids.edu.gh<br>+233 20 807 1685<br><a href="https://ecothinkgh.net">ecothinkgh.net</a></p>
+      </article>
+      <article class="person">
+        <div class="avatar" style="background:var(--laterite)">OK</div>
+        <h3>Prof. Osumanu Issaka Kanton</h3>
+        <p class="role">Co-Director</p>
+        <p style="color:var(--ink-soft);font-size:.93rem">Pro Vice-Chancellor, University of Business and Integrated Development Studies (UBIDS), Wa.</p>
+      </article>
+      <article class="person">
+        <div class="avatar" style="background:var(--volta)">HO</div>
+        <h3>Harrison Okoto</h3>
+        <p class="role">Secretary, Administrator &amp; Field Research Officer</p>
+        <p style="color:var(--ink-soft);font-size:.93rem">Coordinates administration, field operations and data collection.</p>
+        <p class="contact-line">okoto.harrison@ubids.edu.gh<br>+233 50 625 5533</p>
+      </article>
+    </div>
+    <h3 class="sub-h" style="font-size:1.2rem">Founding members</h3>
+    <div class="team founders">
+      <article class="person">
+        <div class="avatar" style="background:var(--forest)">HD</div>
+        <h3>Prof. Hamidatu Saaka Darimani</h3>
+        <p style="color:var(--ink-soft);font-size:.93rem">Academic, researcher and engineer. Vice-Chancellor, Dr. Hilla Limann Technical University (DHLTU), Wa.</p>
+      </article>
+      <article class="person">
+        <div class="avatar" style="background:var(--volta)">CA</div>
+        <h3>Prof. Constance Awinpoka Akurugu</h3>
+        <p style="color:var(--ink-soft);font-size:.93rem">Associate Professor of Sociology and Gender Studies; Director, Centre for Gender, Diversity and Social Inclusion, UBIDS.</p>
+      </article>
+      <article class="person">
+        <div class="avatar" style="background:var(--laterite)">RA</div>
+        <h3>Prof. Raymond Aabeyir</h3>
+        <p style="color:var(--ink-soft);font-size:.93rem">Associate Professor and Vice-Dean, Faculty of Social Sciences and Arts, UBIDS, Wa.</p>
+      </article>
+      <article class="person">
+        <div class="avatar" style="background:var(--ink-soft)">GT</div>
+        <h3>Mr Gordon N. Tuu</h3>
+        <p style="color:var(--ink-soft);font-size:.93rem">PhD Candidate and Lecturer, University for Development Studies, Tamale.</p>
+      </article>
+      <article class="person open">
+        <div class="avatar">+</div>
+        <h3>Associates &amp; researchers</h3>
+        <p style="color:var(--ink-soft);font-size:.93rem">Space for ECOTHINK's network of associate researchers, GIS specialists, facilitators and advisory board members.</p>
+        <a href="#contact" style="font-weight:600;font-size:.9rem">Join our network</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER & FUND -->
+<section class="fund" id="partner">
+  <div class="wrap">
+    <div class="fund-top">
+      <div>
+        <p class="eyebrow">Partner &amp; fund</p>
+        <h2 style="font-size:clamp(2rem,4.4vw,3rem);font-weight:800;margin-top:12px">A grant-ready partner in the Volta Basin</h2>
+        <p class="lede" style="margin-top:16px">We work with foundations, development agencies, universities and government on projects that need both research depth and delivery on the ground.</p>
+        <div class="why">
+          <div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="var(--forest)"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2.2" fill="none"/></svg><p><b>Fully registered.</b> Incorporated company limited by guarantee and licensed National Non-Profit Organisation.</p></div>
+          <div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="var(--forest)"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2.2" fill="none"/></svg><p><b>Experience with major funders.</b> Our members have delivered projects for IUCN, GIZ and UNICEF.</p></div>
+          <div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="var(--forest)"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2.2" fill="none"/></svg><p><b>Research and implementation in one team.</b> Baselines, PGIS, planning, training and field delivery without handovers.</p></div>
+          <div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="var(--forest)"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2.2" fill="none"/></svg><p><b>Local presence.</b> Headquartered in Wa with established relationships with District Assemblies and communities across six regions.</p></div>
+          <div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="var(--forest)"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2.2" fill="none"/></svg><p><b>Participatory by design.</b> Communities shape plans, so outcomes are owned and sustained.</p></div>
+          <div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="var(--forest)"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2.2" fill="none"/></svg><p><b>Academic depth across disciplines.</b> Leadership includes a Pro Vice-Chancellor and a Vice-Chancellor, with expertise in environment, engineering, gender and social inclusion, and the social sciences.</p></div>
+        </div>
+      </div>
+      <aside class="factsheet" aria-labelledby="fs-h">
+        <h3 id="fs-h">Organisational fact sheet <button class="copy-btn" id="copyFacts" type="button">Copy for proposals</button></h3>
+        <dl id="facts">
+          <dt>Legal name</dt><dd>Ecosystem Thinking Research and Development Group (ECOTHINK) LBG</dd>
+          <dt>Type</dt><dd>Company limited by guarantee; National Non-Profit Organisation</dd>
+          <dt>Reg. no.</dt><dd>CG021970324</dd>
+          <dt>TIN</dt><dd>C0063924773</dd>
+          <dt>NPO licence</dt><dd>NPOS/UW10/LN01762/24 (valid to 12 Feb 2027)</dd>
+          <dt>Founded</dt><dd>2024 (incorporated 27 March 2024)</dd>
+          <dt>Website</dt><dd>ecothinkgh.net</dd>
+          <dt>Base</dt><dd>Wa, Upper West Region, Ghana</dd>
+          <dt>Address</dt><dd>P.O. Box UY 100, Wa · GPS XW-1036-1104</dd>
+          <dt>Focus area</dt><dd>Volta River Basin: Upper West, Upper East, North East, Bono, Bono East, Oti</dd>
+          <dt>Themes</dt><dd>Ecosystem management, climate resilience, agroforestry, livelihoods, WASH, child protection, participatory planning, PGIS</dd>
+          <dt>Team experience</dt><dd>IUCN, GIZ, UNICEF, District Assemblies</dd>
+          <dt>Leadership</dt><dd>Prof. Kenneth Peprah (Director); Prof. Osumanu Issaka Kanton (Co-Director)</dd>
+        </dl>
+      </aside>
+    </div>
+
+    <h3 class="sub-h">Registration and accountability</h3>
+    <p class="sub-p">Copies of all documents are available to funders and partners on request for due diligence.</p>
+    <div class="compliance">
+      <div class="doc"><span class="k">Registrar of Companies</span><h4>Certificate of Incorporation</h4><span class="num">Reg. No. CG021970324</span><p>Incorporated 27 March 2024 under the Companies Act, 2019 (Act 992), limited by guarantee.</p></div>
+      <div class="doc"><span class="k">NPO Secretariat, Dept. of Social Welfare</span><h4>National NPO Licence</h4><span class="num">NPOS/UW10/LN01762/24</span><span class="valid">Valid until 12 Feb 2027</span></div>
+    </div>
+
+    <h3 class="sub-h">Projects seeking partners and funding</h3>
+    <p class="sub-p">Our pipeline for the coming years. Each concept can be developed into a full proposal with a partner.</p>
+    <div class="pipeline">
+      <article class="proj">
+        <span class="status st-ready">Partnership in progress</span>
+        <h4>Dignity Toilet Project, Ghana</h4>
+        <p>Bringing the Dignity Toilet concept to Ghana. Two communities have already agreed to implement it. We are seeking a training partnership for local artisans and co-funding for construction.</p>
+        <div class="meta"><span><b>Themes</b> WASH, sanitation, dignity, artisan skills</span><span><b>Seeking</b> Co-funding, technical partner</span></div>
+      </article>
+      <article class="proj">
+        <span class="status st-concept">Concept</span>
+        <h4>Volta Basin ecosystem health monitoring</h4>
+        <p>Community-based monitoring of riverbank vegetation, land use and water stress along the Black Volta, feeding district decisions.</p>
+        <div class="meta"><span><b>Themes</b> River basin, PGIS, climate data</span><span><b>Seeking</b> Research funding, data partners</span></div>
+      </article>
+      <article class="proj">
+        <span class="status st-concept">Concept</span>
+        <h4>Fruit trees and value chains for smallholders</h4>
+        <p>Scaling up tree, fruit-tree and cereal planting with processing and market links that raise farm incomes for women and vulnerable groups.</p>
+        <div class="meta"><span><b>Themes</b> Agroforestry, livelihoods, restoration</span><span><b>Seeking</b> Grants, private-sector buyers</span></div>
+      </article>
+      <article class="proj">
+        <span class="status st-concept">Concept</span>
+        <h4>District ecosystem-planning academy</h4>
+        <p>Training District Assembly planners to integrate ecosystem management into medium-term development plans, building on the Nandom model.</p>
+        <div class="meta"><span><b>Themes</b> Governance, capacity building</span><span><b>Seeking</b> Development agency partners</span></div>
+      </article>
+      <article class="proj">
+        <span class="status st-concept">Concept</span>
+        <h4>PGIS mapping service for districts</h4>
+        <p>Extending participatory infrastructure mapping to more districts in northern and central Ghana for evidence-based investment planning.</p>
+        <div class="meta"><span><b>Themes</b> Spatial data, planning</span><span><b>Seeking</b> Commissioning partners</span></div>
+      </article>
+      <article class="proj slot">
+        <svg viewBox="0 0 40 40" width="40" height="40" style="justify-self:center" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="var(--laterite)" stroke-width="2" stroke-dasharray="4 4"/><path d="M20 12v16M12 20h16" stroke="var(--laterite)" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <h4>Your project here</h4>
+        <p>Have a call for proposals or a research idea? Let's co-design it.</p>
+        <a class="btn btn-primary" href="#contact" style="justify-self:center" data-subject="Partnership">Propose a collaboration</a>
+      </article>
+    </div>
+
+    <h3 class="sub-h">Ways to work with us</h3>
+    <p class="sub-p">Choose the role that fits your organisation.</p>
+    <div class="models">
+      <div class="model"><h4>Funder</h4><p>Support a pipeline project or a programme area through grants or co-financing.</p></div>
+      <div class="model"><h4>Implementing partner</h4><p>Join a consortium. We lead or support field delivery, training and community engagement.</p></div>
+      <div class="model"><h4>Research partner</h4><p>Universities and institutes collaborating on studies, data, joint publications and student fieldwork.</p></div>
+      <div class="model"><h4>Commissioning client</h4><p>Commission consultancy, PGIS mapping, baselines, evaluations or planning support.</p></div>
+    </div>
+
+    <h3 class="sub-h">Alignment with the Sustainable Development Goals</h3>
+    <p class="sub-p">How our work maps to global targets, for funders reporting against the SDGs.</p>
+    <div class="sdgs">
+      <span class="sdg"><b style="background:#E5243B">1</b>No Poverty</span>
+      <span class="sdg"><b style="background:#DDA63A">2</b>Zero Hunger</span>
+      <span class="sdg"><b style="background:#26BDE2">6</b>Clean Water &amp; Sanitation</span>
+      <span class="sdg"><b style="background:#FD9D24">11</b>Sustainable Communities</span>
+      <span class="sdg"><b style="background:#3F7E44">13</b>Climate Action</span>
+      <span class="sdg"><b style="background:#56C02B">15</b>Life on Land</span>
+      <span class="sdg"><b style="background:#19486A">17</b>Partnerships</span>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS & NEWS -->
+<section id="events">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Events &amp; news</p>
+      <h2>What's happening</h2>
+    </div>
+    <div class="split">
+      <div>
+        <h3 class="sub-h">Events</h3>
+        <div class="filters" role="group" aria-label="Filter events">
+          <button type="button" aria-pressed="true" data-f="all">All</button>
+          <button type="button" aria-pressed="false" data-f="upcoming">Upcoming</button>
+          <button type="button" aria-pressed="false" data-f="past">Past</button>
+        </div>
+        <div id="eventList">
+          <article class="event" data-k="upcoming">
+            <div class="date-box"><b>TBC</b><span>2026</span></div>
+            <div><h4>Community tree-planting day</h4><p>Planting fruit trees with smallholder farmers and schools. Volunteers and sponsors welcome.</p><p class="loc">Upper West Region</p></div>
+          </article>
+          <article class="event" data-k="upcoming">
+            <div class="date-box"><b>TBC</b><span>2027</span></div>
+            <div><h4>Dignity Toilet artisan training</h4><p>Hands-on training for local artisans ahead of construction in two partner communities.</p><p class="loc">Northern Ghana</p></div>
+          </article>
+          <article class="event" data-k="upcoming">
+            <div class="date-box"><b>TBC</b><span>2027</span></div>
+            <div><h4>Workshop: ecosystem-based management for districts</h4><p>A capacity-building session for district planners and community leaders.</p><p class="loc">Wa</p></div>
+          </article>
+          <article class="event" data-k="past">
+            <div class="date-box"><b>2015</b><span>IUCN</span></div>
+            <div><h4>Nandom participatory planning sessions</h4><p>Community and district consultations that shaped the five-year development plan along the Black Volta.</p><p class="loc">Nandom District</p></div>
+          </article>
+        </div>
+      </div>
+      <div>
+        <h3 class="sub-h">Latest news</h3>
+        <div class="news-list">
+          <article class="news">
+            <span class="cat">Partnerships</span>
+            <h4>Two communities agree to host the Dignity Toilet Project</h4>
+            <p>ECOTHINK is building a partnership to train Ghanaian artisans and bring the Dignity Toilet concept to Ghana.</p>
+            <details><summary>Read more</summary><p>Safe, dignified sanitation remains a challenge in many rural communities. ECOTHINK is working to bring in experienced trainers to build local artisan skills, so construction and maintenance stay in community hands. Partners interested in co-funding can contact us.</p></details>
+          </article>
+          <article class="news">
+            <span class="cat">Projects</span>
+            <h4>PGIS mapping for GIZ completed across Upper West and Savannah</h4>
+            <p>District Assemblies now have participatory maps of their development infrastructure.</p>
+            <details><summary>Read more</summary><p>Working with communities and district officers, our team mapped schools, health facilities, water points, roads and other infrastructure. The data supports strategic planning and helps target investment where it is needed most.</p></details>
+          </article>
+          <article class="news">
+            <span class="cat">Community action</span>
+            <h4>Growing resilience with trees and cereals</h4>
+            <p>Our planting programmes link restoration with farm income.</p>
+            <details><summary>Read more</summary><p>By planting fruit trees and cereals and developing value chains around them, we help smallholder farmers and vulnerable groups build income and resilience to climate shocks.</p></details>
+          </article>
+          <article class="news">
+            <span class="cat">From the archive</span>
+            <h4>Nandom: putting ecosystems into a district plan</h4>
+            <p>How our 2015 IUCN project integrated the Black Volta into local governance.</p>
+            <details><summary>Read more</summary><p>The participatory five-year plan was one of the early efforts in the region to integrate ecosystem management directly into district development planning. It remains a model for our district work today.</p></details>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Gallery</p>
+      <h2>From the field</h2>
+    </div>
+    <div class="filters" role="group" aria-label="Filter gallery" id="galFilters">
+      <button type="button" aria-pressed="true" data-f="all">All</button>
+      <button type="button" aria-pressed="false" data-f="field">Fieldwork</button>
+      <button type="button" aria-pressed="false" data-f="plant">Tree planting</button>
+      <button type="button" aria-pressed="false" data-f="train">Training</button>
+      <button type="button" aria-pressed="false" data-f="comm">Community</button>
+    </div>
+    <div class="gallery" id="gallery-grid"></div>
+    <p class="note">Illustrations mark where project photographs will go. Replace each with a real photo and caption.</p>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section id="resources" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Resources</p>
+      <h2>Reports, briefs and tools</h2>
+      <p class="lede">Our knowledge library for partners, researchers and practitioners.</p>
+    </div>
+    <label for="resSearch" style="font-weight:400;font-size:.85rem;color:var(--ink-soft)">Search the library
+      <input class="search" id="resSearch" type="search" placeholder="Try ‘PGIS’ or ‘WASH’">
+    </label>
+    <div class="res-table-wrap">
+      <table>
+        <thead><tr><th>Title</th><th>Type</th><th>Year</th><th>Availability</th></tr></thead>
+        <tbody id="resBody">
+          <tr><td><b>Registration and licence documents</b><br><span class="avail">Certificate of Incorporation and NPO licence.</span></td><td><span class="type">Governance</span></td><td>2024–26</td><td><a href="#contact">Request a copy</a></td></tr>
+          <tr><td><b>ECOTHINK capability statement</b><br><span class="avail">Our services, track record and team in brief.</span></td><td><span class="type">Profile</span></td><td>2026</td><td><a href="#contact">Request a copy</a></td></tr>
+          <tr><td><b>Nandom District participatory development plan</b><br><span class="avail">Five-year plan integrating ecosystem management, prepared with IUCN.</span></td><td><span class="type">Report</span></td><td>2015</td><td><a href="#contact">Request a copy</a></td></tr>
+          <tr><td><b>PGIS infrastructure mapping: Upper West and Savannah</b><br><span class="avail">Summary of the method and findings from our GIZ work.</span></td><td><span class="type">Brief</span></td><td>—</td><td><span class="avail">Coming soon</span></td></tr>
+          <tr><td><b>Community guide to fruit-tree planting and care</b><br><span class="avail">Practical guide for smallholder farmers.</span></td><td><span class="type">Manual</span></td><td>—</td><td><span class="avail">Coming soon</span></td></tr>
+          <tr><td><b>WASH and child protection: lessons from northern Ghana</b><br><span class="avail">Learning brief from our UNICEF projects.</span></td><td><span class="type">Brief</span></td><td>—</td><td><span class="avail">Coming soon</span></td></tr>
+          <tr><td><b>Ecosystem thinking for district planners</b><br><span class="avail">Training manual for capacity-building workshops.</span></td><td><span class="type">Manual</span></td><td>—</td><td><span class="avail">Coming soon</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Contact</p>
+      <h2>Let's work together</h2>
+      <p class="lede">For consultancy, partnerships, grant collaborations, training or media enquiries.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="c-card">
+        <div class="c-row"><span class="k">Website</span><span class="v mono">ecothinkgh.net</span></div>
+        <div class="c-row"><span class="k">GhanaPost digital address</span><span class="v mono">XW-1036-1104</span></div>
+        <div class="c-row"><span class="k">Postal address</span><span class="v">P.O. Box UY 100, Wa, Upper West Region, Ghana</span></div>
+        <div class="c-row"><span class="k">Director</span><span class="v">Prof. Kenneth Peprah</span>
+          <span class="v mono" style="font-size:.9rem">+233 20 807 1685 · kpeprah@ubids.edu.gh</span>
+          <div class="actions"><button class="copy-btn" data-copy="kpeprah@ubids.edu.gh">Copy email</button><button class="copy-btn" data-copy="+233208071685">Copy phone</button><a class="copy-btn" style="text-decoration:none" href="https://wa.me/233208071685" target="_blank" rel="noopener">WhatsApp</a></div>
+        </div>
+        <div class="c-row"><span class="k">Administrator &amp; Field Research Officer</span><span class="v">Harrison Okoto</span>
+          <span class="v mono" style="font-size:.9rem">+233 50 625 5533 · okoto.harrison@ubids.edu.gh</span>
+          <div class="actions"><button class="copy-btn" data-copy="okoto.harrison@ubids.edu.gh">Copy email</button><button class="copy-btn" data-copy="+233506255533">Copy phone</button><a class="copy-btn" style="text-decoration:none" href="https://wa.me/233506255533" target="_blank" rel="noopener">WhatsApp</a></div>
+        </div>
+        <div class="c-row"><span class="k">Follow us</span>
+          <div class="socials">
+            <span class="soc"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg>Facebook · to be added</span>
+            <span class="soc"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h4.5l4 5.6L17 4h3l-6.2 7.6L21 20h-4.5l-4.4-6.1L7 20H4l6.6-8z"/></svg>X · to be added</span>
+            <span class="soc"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 9h3v11H5zM6.5 4a1.8 1.8 0 110 3.6 1.8 1.8 0 010-3.6zM10 9h3v1.6c.5-.9 1.7-1.8 3.4-1.8 3 0 3.6 2 3.6 4.6V20h-3v-5.8c0-1.4 0-3-1.9-3s-2.1 1.4-2.1 2.9V20h-3z"/></svg>LinkedIn · to be added</span>
+            <span class="soc"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="2"/></svg>Instagram · to be added</span>
+            <span class="soc"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg>YouTube · to be added</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <form id="contactForm" novalidate>
+          <div class="f-row">
+            <label for="fName">Your name<input id="fName" name="name" required autocomplete="name"></label>
+            <label for="fOrg">Organisation<input id="fOrg" name="org" autocomplete="organization"></label>
+          </div>
+          <div class="f-row">
+            <label for="fEmail">Email<input id="fEmail" name="email" type="email" required autocomplete="email"></label>
+            <label for="fSubject">Enquiry type
+              <select id="fSubject" name="subject">
+                <option>Partnership / grant collaboration</option>
+                <option>Consultancy</option>
+                <option>Training</option>
+                <option>Research collaboration</option>
+                <option>Media</option>
+                <option>General</option>
+              </select>
+            </label>
+          </div>
+          <label for="fMsg">Message<textarea id="fMsg" name="message" required placeholder="Tell us about your project, call for proposals or question."></textarea></label>
+          <div><button class="btn btn-primary" type="submit">Prepare my message</button></div>
+          <p id="formErr" style="color:var(--laterite);font-size:.88rem" hidden></p>
+        </form>
+        <div class="form-out" id="formOut" hidden>
+          <p><b>Your message is ready.</b> Copy it and send it to kpeprah@ubids.edu.gh.</p>
+          <pre id="formText"></pre>
+          <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="copy-btn" id="copyMsg" type="button">Copy message</button><button class="copy-btn" data-copy="kpeprah@ubids.edu.gh" type="button">Copy email address</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>ECOTHINK</h4>
+        <p>Ecosystem Thinking Research and Development Group. A Ghana-based not-for-profit think tank and action research collective.</p>
+        <p style="margin-top:10px;color:var(--band-ink)">Humans live in harmony with their ecosystems.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul><li><a href="#about">About</a></li><li><a href="#work">Track record</a></li><li><a href="#partner">Partner &amp; fund</a></li><li><a href="#resources">Resources</a></li></ul>
+      </div>
+      <div>
+        <h4>Visit &amp; write</h4>
+        <p>P.O. Box UY 100, Wa, Ghana<br><span style="font-family:var(--f-mono)">XW-1036-1104</span><br>+233 20 807 1685</p>
+      </div>
+    </div>
+    <div class="foot-base"><span>© 2026 ECOTHINK LBG · Reg. No. CG021970324 · NPO Licence NPOS/UW10/LN01762/24</span><span>ecothinkgh.net · Volta River Basin · Sub-Saharan Africa</span></div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Gallery image">
+  <div class="lightbox-inner">
+    <div class="art" id="lbArt"></div>
+    <div class="txt"><div><b id="lbTitle"></b><div id="lbSub" style="font-size:.85rem;color:var(--ink-soft)"></div></div><button class="copy-btn" id="lbClose" type="button">Close</button></div>
+  </div>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(function(){
+  // mobile nav
+  const mb=document.getElementById('menuBtn'),nl=document.getElementById('navList');
+  mb.addEventListener('click',()=>{const o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+  nl.addEventListener('click',e=>{if(e.target.tagName==='A'){nl.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
+
+  // toast + copy
+  const toast=document.getElementById('toast');let tt;
+  function say(m){toast.textContent=m;toast.hidden=false;clearTimeout(tt);tt=setTimeout(()=>toast.hidden=true,2200)}
+  function copy(text,label){
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(()=>say(label||'Copied')).catch(()=>fallback(text));
+    } else fallback(text);
+  }
+  function fallback(text){
+    const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');say('Copied')}catch(e){say('Select the text to copy it')}ta.remove();
+  }
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(b)copy(b.dataset.copy,'Copied '+b.dataset.copy)});
+  document.getElementById('copyFacts').addEventListener('click',()=>{
+    const dts=[...document.querySelectorAll('#facts dt')],dds=[...document.querySelectorAll('#facts dd')];
+    copy(dts.map((d,i)=>d.textContent+': '+dds[i].textContent).join('\n'),'Fact sheet copied');
+  });
+
+  // events filter
+  document.querySelectorAll('#events .filters button').forEach(b=>b.addEventListener('click',()=>{
+    b.parentElement.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+    document.querySelectorAll('#eventList .event').forEach(ev=>ev.hidden=!(b.dataset.f==='all'||ev.dataset.k===b.dataset.f));
+  }));
+
+  // gallery
+  const P={forest:'#1E4D3A',deep:'#13281F',volta:'#1C6480',sky:'#6DB5D3',lat:'#B4652A',sun:'#E39A5C',leaf:'#7CC29D',sand:'#D9C7A3'};
+  const scenes={
+    river:`<rect width="400" height="225" fill="${P.sand}"/><path d="M0 150 C100 120 160 190 260 150 S360 130 400 160 V225 H0Z" fill="${P.volta}"/><path d="M0 170 C120 150 180 205 280 175 S370 160 400 180" stroke="${P.sky}" stroke-width="4" fill="none"/><circle cx="320" cy="55" r="28" fill="${P.sun}"/><g fill="${P.forest}"><circle cx="60" cy="110" r="26"/><circle cx="110" cy="118" r="20"/><circle cx="350" cy="120" r="22"/></g>`,
+    plant:`<rect width="400" height="225" fill="${P.lat}"/><rect y="150" width="400" height="75" fill="#8A4A1D"/><g fill="${P.leaf}"><circle cx="80" cy="130" r="18"/><circle cx="170" cy="120" r="24"/><circle cx="260" cy="128" r="20"/><circle cx="340" cy="122" r="22"/></g><g fill="${P.deep}"><rect x="78" y="140" width="4" height="22"/><rect x="168" y="134" width="4" height="28"/><rect x="258" y="140" width="4" height="22"/><rect x="338" y="136" width="4" height="26"/></g>`,
+    map:`<rect width="400" height="225" fill="${P.deep}"/><g stroke="${P.leaf}" stroke-width="1" opacity=".35">${Array.from({length:9},(_,i)=>`<path d="M0 ${25*i} H400"/><path d="M${50*i} 0 V225"/>`).join('')}</g><path d="M30 190 C90 120 160 160 220 90 S330 60 380 30" stroke="${P.sky}" stroke-width="5" fill="none"/><g fill="${P.sun}"><circle cx="110" cy="140" r="7"/><circle cx="220" cy="92" r="7"/><circle cx="300" cy="70" r="7"/><circle cx="160" cy="60" r="7"/></g>`,
+    meet:`<rect width="400" height="225" fill="${P.forest}"/><ellipse cx="200" cy="40" rx="190" ry="40" fill="${P.deep}"/><g fill="${P.sand}"><circle cx="110" cy="120" r="16"/><circle cx="170" cy="112" r="16"/><circle cx="230" cy="112" r="16"/><circle cx="290" cy="120" r="16"/></g><g fill="${P.lat}"><rect x="94" y="140" width="32" height="50" rx="12"/><rect x="154" y="132" width="32" height="58" rx="12"/><rect x="214" y="132" width="32" height="58" rx="12"/><rect x="274" y="140" width="32" height="50" rx="12"/></g>`,
+    train:`<rect width="400" height="225" fill="${P.volta}"/><rect x="60" y="40" width="200" height="110" rx="6" fill="#F4F6F1"/><path d="M80 70h120M80 92h150M80 114h90" stroke="${P.volta}" stroke-width="6" stroke-linecap="round"/><circle cx="310" cy="110" r="22" fill="${P.sand}"/><rect x="288" y="134" width="44" height="70" rx="16" fill="${P.sun}"/>`,
+    wash:`<rect width="400" height="225" fill="${P.sky}"/><rect y="160" width="400" height="65" fill="${P.sand}"/><rect x="150" y="70" width="100" height="95" fill="#F4F6F1"/><path d="M140 72 L200 36 L260 72Z" fill="${P.lat}"/><rect x="186" y="110" width="28" height="55" fill="${P.forest}"/><circle cx="300" cy="150" r="10" fill="${P.volta}"/><rect x="296" y="110" width="8" height="34" fill="${P.deep}"/>`
+  };
+  const items=[
+    {s:'river',c:'field',t:'Black Volta riverbank survey',l:'Nandom District',cls:'wide tall'},
+    {s:'plant',c:'plant',t:'Fruit-tree planting with farmers',l:'Upper West Region',cls:''},
+    {s:'map',c:'field',t:'PGIS infrastructure mapping',l:'Savannah Region',cls:''},
+    {s:'meet',c:'comm',t:'Community planning forum',l:'Upper West Region',cls:'wide'},
+    {s:'train',c:'train',t:'Stakeholder training session',l:'Wa',cls:''},
+    {s:'wash',c:'comm',t:'WASH facilities in a partner community',l:'Northern Ghana',cls:''},
+    {s:'plant',c:'plant',t:'Cereal plots and value chains',l:'Bono East',cls:'wide'}
+  ];
+  const grid=document.getElementById('gallery-grid');
+  items.forEach((it,i)=>{
+    const b=document.createElement('button');b.type='button';b.className='g '+it.cls;b.dataset.c=it.c;
+    b.setAttribute('aria-label','Open: '+it.t);
+    b.innerHTML=`<svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${scenes[it.s]}</svg><span class="cap"><small>${it.l}</small>${it.t}</span>`;
+    b.addEventListener('click',()=>openLb(it));grid.appendChild(b);
+  });
+  document.querySelectorAll('#galFilters button').forEach(b=>b.addEventListener('click',()=>{
+    b.parentElement.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+    grid.querySelectorAll('.g').forEach(g=>g.hidden=!(b.dataset.f==='all'||g.dataset.c===b.dataset.f));
+  }));
+  const lb=document.getElementById('lightbox');
+  function openLb(it){
+    document.getElementById('lbArt').innerHTML=`<svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${scenes[it.s]}</svg>`;
+    document.getElementById('lbTitle').textContent=it.t;
+    document.getElementById('lbSub').textContent=it.l+' · photo to be added';
+    lb.hidden=false;document.getElementById('lbClose').focus();
+  }
+  document.getElementById('lbClose').addEventListener('click',()=>lb.hidden=true);
+  lb.addEventListener('click',e=>{if(e.target===lb)lb.hidden=true});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.hidden=true});
+
+  // resources search
+  document.getElementById('resSearch').addEventListener('input',e=>{
+    const q=e.target.value.toLowerCase();
+    document.querySelectorAll('#resBody tr').forEach(r=>r.hidden=q&&!r.textContent.toLowerCase().includes(q));
+  });
+
+  // preset subject from CTA
+  document.querySelectorAll('[data-subject]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('fSubject').selectedIndex=0}));
+
+  // contact form
+  const form=document.getElementById('contactForm'),err=document.getElementById('formErr');
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    const d=Object.fromEntries(new FormData(form));
+    if(!d.name.trim()||!d.email.trim()||!d.message.trim()){err.textContent='Please add your name, email and a message.';err.hidden=false;return}
+    if(!/^\S+@\S+\.\S+$/.test(d.email)){err.textContent='That email address looks incomplete. Check it and try again.';err.hidden=false;return}
+    err.hidden=true;
+    const text=`To: kpeprah@ubids.edu.gh\nSubject: ${d.subject} enquiry from ${d.name}${d.org?' ('+d.org+')':''}\n\n${d.message}\n\n${d.name}\n${d.org||''}\n${d.email}`;
+    document.getElementById('formText').textContent=text;
+    document.getElementById('formOut').hidden=false;
+  });
+  document.getElementById('copyMsg').addEventListener('click',()=>copy(document.getElementById('formText').textContent,'Message copied'));
+})();
+</script>
+</body>
+</html>
